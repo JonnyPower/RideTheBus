@@ -2,11 +2,9 @@ package com.jonnypower.ridethebus.strategy;
 
 import com.jonnypower.ridethebus.answers.*;
 import com.jonnypower.ridethebus.domain.Card;
-import com.jonnypower.ridethebus.domain.CardSuitColor;
 import com.jonnypower.ridethebus.util.CardUtils;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class CardCountingStrategy extends Strategy {
 
@@ -18,7 +16,7 @@ public class CardCountingStrategy extends Strategy {
   protected OddOrEvenAnswer oddOrEven(List<Card> playedCards) {
     int oddCardCount = 0;
     int evenCardCount = 0;
-    for(Card card : playedCards) {
+    for (Card card : playedCards) {
       if (card.isEven()) {
         evenCardCount++;
       } else {
@@ -26,7 +24,7 @@ public class CardCountingStrategy extends Strategy {
       }
     }
 
-    if(oddCardCount > evenCardCount) {
+    if (oddCardCount > evenCardCount) {
       return OddOrEvenAnswer.EVEN;
     }
     return OddOrEvenAnswer.ODD;
@@ -42,7 +40,7 @@ public class CardCountingStrategy extends Strategy {
     int higherCardCount = 0;
     int lowerCardCount = 0;
     for (Card card : remainingDeck) {
-      if(card.getValue().asInt() > lastPlayed.getValue().asInt()) {
+      if (card.getValue().asInt() > lastPlayed.getValue().asInt()) {
         higherCardCount++;
       } else if (card.getValue().asInt() < lastPlayed.getValue().asInt()) {
         lowerCardCount++;
@@ -56,7 +54,7 @@ public class CardCountingStrategy extends Strategy {
   protected RedOrBlackAnswer redOrBlack(List<Card> playedCards) {
     int redCardCount = 0;
     int blackCardCount = 0;
-    for(Card card : playedCards) {
+    for (Card card : playedCards) {
       if (card.isRed()) {
         redCardCount++;
       } else {
@@ -81,7 +79,7 @@ public class CardCountingStrategy extends Strategy {
     int sameSuitCount = 0;
     int diffSuitCount = 0;
     for (Card card : remainingDeck) {
-      if(card.getSuit() == lastPlayed.getSuit()) {
+      if (card.getSuit() == lastPlayed.getSuit()) {
         sameSuitCount++;
       } else {
         diffSuitCount++;
@@ -115,7 +113,7 @@ public class CardCountingStrategy extends Strategy {
       }
     }
 
-    if(diamondSuitCount <= heartSuitCount && diamondSuitCount <= clubSuitCount && diamondSuitCount <= spadeSuitCount) {
+    if (diamondSuitCount <= heartSuitCount && diamondSuitCount <= clubSuitCount && diamondSuitCount <= spadeSuitCount) {
       return WhichSuitAnswer.DIAMONDS;
     } else if (heartSuitCount <= diamondSuitCount && heartSuitCount <= clubSuitCount && heartSuitCount <= spadeSuitCount) {
       return WhichSuitAnswer.HEARTS;

@@ -24,9 +24,13 @@ public abstract class Strategy {
   }
 
   protected abstract OddOrEvenAnswer oddOrEven(List<Card> playedCards);
+
   protected abstract HigherOrLowerAnswer higherOrLower(List<Card> playedCards);
+
   protected abstract RedOrBlackAnswer redOrBlack(List<Card> playedCards);
+
   protected abstract SameOrDifferentSuitAnswer sameOrDifferentSuit(List<Card> playedCards);
+
   protected abstract WhichSuitAnswer whichSuit(List<Card> playedCards);
 
 }

@@ -11,7 +11,7 @@ public class WhichSuitAnswerTests extends AnswerableTests {
 
   @DataProvider
   public Object[][] testCorrect() {
-    return new Object[][] {
+    return new Object[][]{
         new Object[]{WhichSuitAnswer.HEARTS, hearts(CardValue.ACE), true},
         new Object[]{WhichSuitAnswer.CLUBS, hearts(CardValue.ACE), false},
         new Object[]{WhichSuitAnswer.DIAMONDS, hearts(CardValue.ACE), false},

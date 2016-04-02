@@ -6,13 +6,12 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static com.jonnypower.ridethebus.util.CardUtils.*;
-import static org.testng.Assert.assertEquals;
 
 public class RedOrBlackAnswerTests extends AnswerableTests {
 
   @DataProvider
   public Object[][] testCorrect() {
-    return new Object[][] {
+    return new Object[][]{
         new Object[]{RedOrBlackAnswer.BLACK, clubs(CardValue.ACE), true},
         new Object[]{RedOrBlackAnswer.RED, clubs(CardValue.ACE), false},
         new Object[]{RedOrBlackAnswer.BLACK, spades(CardValue.ACE), true},
