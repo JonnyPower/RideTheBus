@@ -1,0 +1,7 @@
+<suite name="tests" verbose="10">
+    <test name="tests">
+        <packages>
+            <package name="com.jonnypower.ridethebus.*"/>
+        </packages>
+    </test>
+</suite>
