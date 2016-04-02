@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="RideTheBus">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/build/libs/RideTheBus.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
